@@ -1,0 +1,124 @@
+generator client {
+  provider               = "prisma-client"
+  output                 = "../src/generated/prisma"
+  moduleFormat           = "esm"
+  generatedFileExtension = "ts"
+  importFileExtension    = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum SessionStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  CANCELLED
+  COMPLETED
+}
+
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  fullName     String   @db.VarChar(100)
+  email        String   @unique @db.VarChar(255)
+  passwordHash String
+  avatarUrl    String?
+  department   String?  @db.VarChar(100)
+  studyYear    Int?
+  bio          String?  @db.VarChar(500)
+  role         Role     @default(STUDENT)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  skills       Skill[]
+  notes        Note[]
+  requestedSessions SessionRequest[] @relation("SessionRequester")
+  hostedSessions    SessionRequest[] @relation("SessionHost")
+
+  @@map("users")
+}
+
+model Skill {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String   @db.VarChar(120)
+  description String   @db.VarChar(1000)
+  category    String   @db.VarChar(50)
+  level       String   @db.VarChar(30)
+  lessonCount Int      @default(1)
+  creatorId   String   @db.Uuid
+  creator     User     @relation(fields: [creatorId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  sessionRequests SessionRequest[]
+  lessons       SkillLesson[]
+
+  @@index([creatorId])
+  @@index([category])
+  @@index([createdAt])
+  @@map("skills")
+}
+
+model SkillLesson {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String   @db.VarChar(160)
+  description String   @db.VarChar(1000)
+  videoUrl    String   @db.VarChar(500)
+  position    Int      @default(1)
+  skillId     String   @db.Uuid
+  skill       Skill    @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([skillId, position])
+  @@map("skill_lessons")
+}
+
+model SessionRequest {
+  id              String        @id @default(uuid()) @db.Uuid
+  scheduledAt     DateTime
+  durationMinutes Int           @default(30)
+  message         String        @db.VarChar(500)
+  status          SessionStatus @default(PENDING)
+  meetingUrl      String?       @db.VarChar(500)
+  meetingAddedAt  DateTime?
+  requesterId     String        @db.Uuid
+  hostId          String        @db.Uuid
+  skillId         String        @db.Uuid
+  requester       User          @relation("SessionRequester", fields: [requesterId], references: [id], onDelete: Cascade)
+  host            User          @relation("SessionHost", fields: [hostId], references: [id], onDelete: Cascade)
+  skill           Skill         @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([requesterId])
+  @@index([hostId])
+  @@index([skillId])
+  @@index([scheduledAt])
+  @@index([status])
+  @@map("session_requests")
+}
+
+model Note {
+  id           String   @id @default(uuid()) @db.Uuid
+  title        String   @db.VarChar(160)
+  subject      String   @db.VarChar(100)
+  description  String   @db.VarChar(1000)
+  originalName String   @db.VarChar(255)
+  storedName   String   @unique @db.VarChar(255)
+  mimeType     String   @db.VarChar(100)
+  fileSize     Int
+  uploaderId   String   @db.Uuid
+  uploader     User     @relation(fields: [uploaderId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([uploaderId])
+  @@index([subject])
+  @@index([createdAt])
+  @@map("notes")
+}

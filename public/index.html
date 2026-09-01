@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillExchange student learning community">
+  <title>Student Skill Exchange Platform</title>
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="m6 11.5.1 5.2c3.6 2.6 8.2 2.6 11.8 0l.1-5.2M22 9v6"/></symbol>
+    <symbol id="i-login" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M15 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M8.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v6M22 11h-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6M9 12h12"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M8.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM17 11a4 4 0 0 0 0-8M23 21v-2a4 4 0 0 0-3-3.87"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18h1.5a2 2 0 0 0 0-4H12a1.5 1.5 0 0 1 0-3h3a6 6 0 0 0 0-12h-3Z"/><path d="M7.5 10h.01M9 6.5h.01M14 6h.01M17 9h.01"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6V2Z"/><path d="M14 2v5h5M9 13h6M9 17h6"/></symbol>
+  </svg>
+
+  <!-- LANDING PAGE -->
+  <section id="landingPage" class="page active-page">
+    <header class="site-header">
+      <div class="header-inner container">
+        <button class="brand brand-image-button page-link" type="button" data-page="landingPage" aria-label="SkillExchange landing page"><img class="brand-logo-image" src="./images/skill-exchange-logo.svg" alt="SkillExchange - Learn Share Grow" width="330" height="82"></button>
+        <nav class="desktop-nav" aria-label="Landing navigation">
+          <a class="active" href="#landingHero">Home</a>
+          <a href="#featureSkills">Explore Skills</a>
+          <a href="#featureNotes">Notes</a>
+          <a href="#landingFooter">About Us</a>
+        </nav>
+        <button class="btn btn-outline desktop-login page-link" type="button" data-page="loginPage"><svg><use href="#i-login"></use></svg>Login</button>
+        <button id="landingMenuButton" class="icon-button mobile-only" type="button" aria-label="Open navigation" aria-expanded="false"><svg><use href="#i-menu"></use></svg></button>
+      </div>
+      <nav id="landingMobileMenu" class="mobile-nav container" aria-label="Mobile landing navigation">
+        <a href="#landingHero">Home</a><a href="#featureSkills">Explore Skills</a><a href="#featureNotes">Notes</a><a href="#landingFooter">About Us</a>
+        <button class="btn btn-primary page-link" type="button" data-page="loginPage">Login</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="landingHero" class="landing-hero container">
+        <div class="landing-copy">
+          <h1>Share Your <span class="blue">Skills.</span><br>Learn <span class="green">Together.</span></h1>
+          <p>A student community where you can share your skills, learn from others, and grow together.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary page-link" type="button" data-page="registerPage"><svg><use href="#i-user-plus"></use></svg>Create Account</button>
+            <button class="btn btn-outline page-link" type="button" data-page="loginPage"><svg><use href="#i-login"></use></svg>Login</button>
+          </div>
+        </div>
+        <div class="landing-image-wrap">
+          <img src="./images/student_comunity_image-removebg-preview.png" alt="Three students learning together with books and a laptop" width="724" height="495">
+        </div>
+      </section>
+
+      <section class="feature-strip" aria-label="SkillExchange features">
+        <div class="feature-grid container">
+          <article id="featureSkills" class="feature-card"><span class="feature-icon icon-blue"><svg><use href="#i-search"></use></svg></span><div><h2>Explore Skills</h2><p>Discover skills shared by fellow students.</p></div></article>
+          <article id="featureNotes" class="feature-card"><span class="feature-icon icon-green"><svg><use href="#i-book"></use></svg></span><div><h2>Notes &amp; Resources</h2><p>Access organized notes, guides, and resources.</p></div></article>
+          <article class="feature-card"><span class="feature-icon icon-orange"><svg><use href="#i-share"></use></svg></span><div><h2>Share Your Skills</h2><p>Contribute your skills and help others grow.</p></div></article>
+          <article class="feature-card"><span class="feature-icon icon-violet"><svg><use href="#i-chat"></use></svg></span><div><h2>Connect &amp; Learn</h2><p>Discuss, ask questions, and learn together.</p></div></article>
+        </div>
+      </section>
+    </main>
+    <footer id="landingFooter" class="site-footer"><div class="container footer-inner"><span><strong>SkillExchange</strong> — a student community for sharing knowledge.</span><span>© 2026 · Learn · Share · Grow.</span></div></footer>
+  </section>
+
+  <!-- LOGIN PAGE -->
+  <section id="loginPage" class="page auth-page">
+    <aside class="auth-brand-panel">
+      <button class="brand brand-light page-link" type="button" data-page="landingPage"><span class="brand-mark"><svg><use href="#i-cap"></use></svg></span><span class="brand-copy"><strong>Skill<span>Exchange</span></strong><small>Learn · Share · Grow</small></span></button>
+      <div class="auth-message"><p>WELCOME BACK</p><h1>Continue learning with your student community.</h1><span>Access shared skills, useful notes, and your learning activity.</span></div>
+      <span class="auth-orbit orbit-one"></span><span class="auth-orbit orbit-two"></span>
+    </aside>
+    <main class="auth-form-panel">
+      <div class="auth-form-wrap">
+        <button class="auth-back page-link" type="button" data-page="landingPage"><svg><use href="#i-arrow-left"></use></svg>Back to landing page</button>
+        <div class="auth-heading"><p>WELCOME BACK</p><h2>Login to SkillExchange</h2><span>Enter your college email and password to continue.</span></div>
+        <form id="loginForm" class="auth-form" novalidate>
+          <label>College email<div class="input-wrap"><svg><use href="#i-mail"></use></svg><input id="loginEmail" name="email" type="email" placeholder="name@college.edu" autocomplete="email" required></div></label>
+          <label>Password<div class="input-wrap"><svg><use href="#i-lock"></use></svg><input id="loginPassword" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button class="password-toggle" type="button" data-target="loginPassword" aria-label="Show password"><svg><use href="#i-eye"></use></svg></button></div></label>
+          <p id="loginError" class="form-error" role="alert"></p>
+          <button class="btn btn-primary full-button" type="submit"><svg><use href="#i-login"></use></svg>Login</button>
+        </form>
+        <p class="auth-switch">New to SkillExchange? <button class="text-button page-link" type="button" data-page="registerPage">Create an account</button></p>
+        <p class="demo-note">Your account is securely verified by the SkillExchange backend.</p>
+      </div>
+    </main>
+  </section>
+
+  <!-- REGISTER PAGE -->
+  <section id="registerPage" class="page auth-page">
+    <aside class="auth-brand-panel auth-green">
+      <button class="brand brand-light page-link" type="button" data-page="landingPage"><span class="brand-mark"><svg><use href="#i-cap"></use></svg></span><span class="brand-copy"><strong>Skill<span>Exchange</span></strong><small>Learn · Share · Grow</small></span></button>
+      <div class="auth-message"><p>JOIN THE COMMUNITY</p><h1>Share what you know. Learn what you love.</h1><span>Create your student profile and start growing together.</span></div>
+      <span class="auth-orbit orbit-one"></span><span class="auth-orbit orbit-two"></span>
+    </aside>
+    <main class="auth-form-panel">
+      <div class="auth-form-wrap">
+        <button class="auth-back page-link" type="button" data-page="landingPage"><svg><use href="#i-arrow-left"></use></svg>Back to landing page</button>
+        <div class="auth-heading"><p>GET STARTED</p><h2>Create your account</h2><span>Use your name and college email to join SkillExchange.</span></div>
+        <form id="registerForm" class="auth-form" novalidate>
+          <label>Full name<div class="input-wrap"><svg><use href="#i-user-plus"></use></svg><input id="registerName" name="name" type="text" placeholder="Your full name" autocomplete="name" required></div></label>
+          <label>College email<div class="input-wrap"><svg><use href="#i-mail"></use></svg><input id="registerEmail" name="email" type="email" placeholder="name@college.edu" autocomplete="email" required></div></label>
+          <label>Password<div class="input-wrap"><svg><use href="#i-lock"></use></svg><input id="registerPassword" name="password" type="password" placeholder="Minimum 8 characters" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-target="registerPassword" aria-label="Show password"><svg><use href="#i-eye"></use></svg></button></div></label>
+          <label>Confirm password<div class="input-wrap"><svg><use href="#i-lock"></use></svg><input id="confirmPassword" name="confirm" type="password" placeholder="Enter the password again" autocomplete="new-password" minlength="8" required></div></label>
+          <p id="registerError" class="form-error" role="alert"></p>
+          <button class="btn btn-primary full-button" type="submit"><svg><use href="#i-user-plus"></use></svg>Create Account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <button class="text-button page-link" type="button" data-page="loginPage">Login</button></p>
+        <p class="demo-note">Passwords are securely hashed before account information is stored.</p>
+      </div>
+    </main>
+  </section>
+
+  <!-- HOME DASHBOARD -->
+  <section id="homePage" class="page dashboard-page">
+    <header class="site-header dashboard-header">
+      <div class="header-inner container dashboard-header-inner">
+        <button class="brand brand-image-button page-link" type="button" data-page="landingPage" aria-label="SkillExchange landing page"><img class="brand-logo-image" src="./images/skill-exchange-logo.svg" alt="SkillExchange - Learn Share Grow" width="330" height="82"></button>
+        <nav class="desktop-nav dashboard-nav"><a class="active" href="#dashboardTop">Home</a><a href="#skillsSection">Explore Skills</a><a href="#notesSection">Notes</a><a href="#shareSection">Share a Skill</a></nav>
+        <div class="profile-group">
+          <button id="notificationButton" class="notification-button" type="button" aria-label="Open booking notifications" aria-expanded="false"><svg><use href="#i-bell"></use></svg><span id="notificationDot" hidden></span></button>
+          <div id="notificationPanel" class="notification-panel" aria-label="Booking notifications"><div class="notification-heading"><strong>Booking notifications</strong><small id="notificationCount">0 updates</small></div><div id="notificationList" class="notification-list"></div></div>
+          <button id="profileButton" class="profile-button" type="button" aria-expanded="false"><span class="profile-avatar" id="profileAvatar">U</span><strong id="profileName">User</strong></button>
+          <button id="dashboardMenuButton" class="icon-button mobile-only" type="button" aria-label="Open dashboard navigation" aria-expanded="false"><svg><use href="#i-menu"></use></svg></button>
+          <div id="profileMenu" class="profile-menu"><p>Signed in as <strong id="profileMenuName">User</strong></p><button id="editProfileButton" class="profile-edit-button" type="button"><svg><use href="#i-user-plus"></use></svg>Edit profile</button><button id="logoutButton" class="logout-menu-button" type="button"><svg><use href="#i-logout"></use></svg>Logout</button></div>
+        </div>
+      </div>
+      <nav id="dashboardMobileMenu" class="mobile-nav container"><a href="#dashboardTop">Home</a><a href="#skillsSection">Explore Skills</a><a href="#notesSection">Notes</a><a href="#shareSection">Share a Skill</a></nav>
+    </header>
+
+    <main id="dashboardTop" class="dashboard-main container">
+      <section class="dashboard-hero">
+        <div class="dashboard-welcome">
+          <p class="welcome-line">✦ Welcome back, <span id="welcomeName">User</span>!</p>
+          <h1>What would you like to <span>learn</span> today?</h1>
+          <p>Discover skills shared by students, access useful notes, and grow together with your community.</p>
+          <div class="search-box"><svg><use href="#i-search"></use></svg><input id="skillSearch" type="search" placeholder="Search skills, topics, or students..."><button id="searchButton" class="btn btn-primary" type="button">Search</button></div>
+        </div>
+        <div class="dashboard-actions" aria-label="Quick actions">
+          <a class="hero-action-card action-blue" href="#skillsSection"><span class="hero-action-icon"><svg><use href="#i-search"></use></svg></span><strong>Explore Skills</strong><small>Find something to learn</small></a>
+          <a class="hero-action-card action-green" href="#notesSection"><span class="hero-action-icon"><svg><use href="#i-book"></use></svg></span><strong>Browse Notes</strong><small>Open useful resources</small></a>
+          <a class="hero-action-card hero-action-wide action-orange" href="#shareSection"><span class="hero-action-icon"><svg><use href="#i-upload"></use></svg></span><span><strong>Share a Skill</strong><small>Help another student grow</small></span><b aria-hidden="true">→</b></a>
+        </div>
+      </section>
+
+      <section id="skillsSection" class="dashboard-section">
+        <div class="section-heading"><div><p>LEARN FROM YOUR COMMUNITY</p><h2>Popular skills</h2></div><button id="clearFilters" class="text-button" type="button">Explore all skills →</button></div>
+        <div id="categoryButtons" class="category-list" aria-label="Skill categories">
+          <button class="active" type="button" data-category="All">All</button><button type="button" data-category="Coding">Coding</button><button type="button" data-category="Design">Design</button><button type="button" data-category="Communication">Communication</button><button type="button" data-category="Study Skills">Study Skills</button>
+        </div>
+        <div id="skillsGrid" class="skills-grid"></div>
+        <div id="emptySkills" class="empty-state" hidden><svg><use href="#i-search"></use></svg><h3 id="emptySkillsTitle">No skills found</h3><p id="emptySkillsMessage">Try another word or choose a different category.</p></div>
+      </section>
+
+      <section class="dashboard-two-column">
+        <article id="notesSection" class="panel-card">
+          <div class="section-heading compact-heading"><div><p>STUDENT RESOURCES</p><h2>Notes &amp; Resources</h2></div><button id="uploadNoteButton" class="btn btn-primary small-button" type="button">Upload PDF</button></div>
+          <div class="notes-toolbar"><input id="noteSearch" type="search" placeholder="Search notes..."><select id="noteSubjectFilter" aria-label="Filter notes by subject"><option value="">All subjects</option></select></div>
+          <div id="notesList" class="notes-grid"></div>
+          <div id="emptyNotes" class="notes-empty" hidden><svg><use href="#i-file"></use></svg><h3 id="emptyNotesTitle">No notes uploaded yet</h3><p id="emptyNotesMessage">Be the first student to share a useful PDF resource.</p></div>
+        </article>
+        <aside id="shareSection" class="share-panel"><span class="share-icon"><svg><use href="#i-upload"></use></svg></span><h2>Have a skill to share?</h2><p>Create a lesson or upload helpful notes for your fellow students.</p><button id="shareSkillButton" class="btn light-button" type="button">Share your skill →</button></aside>
+      </section>
+
+      <section class="dashboard-two-column bottom-panels">
+        <article id="sessionsSection" class="panel-card"><div class="panel-title"><div><p class="panel-eyebrow">ONE-TO-ONE LEARNING</p><h2>My sessions</h2></div><svg><use href="#i-calendar"></use></svg></div><div id="sessionsList" class="sessions-list"></div><div id="emptySessions" class="sessions-empty" hidden><svg><use href="#i-calendar"></use></svg><h3>No session requests yet</h3><p>Request a session from a skill card to start learning one-to-one.</p></div></article>
+        <aside class="panel-card"><h2>Quick access</h2><div class="quick-grid"><a href="#skillsSection"><span class="blue-bg"><svg><use href="#i-search"></use></svg></span><strong>Explore</strong></a><a href="#notesSection"><span class="green-bg"><svg><use href="#i-file"></use></svg></span><strong>Notes</strong></a><button id="quickProfileButton" type="button"><span class="orange-bg"><svg><use href="#i-user-plus"></use></svg></span><strong>Profile</strong></button></div></aside>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><span>© 2026 SkillExchange. Learn · Share · Grow.</span><span>Built for students, by students.</span></div></footer>
+  </section>
+
+  <dialog id="skillDialog" class="skill-dialog" aria-labelledby="skillDialogTitle">
+    <form id="skillForm" class="skill-form" novalidate>
+      <div class="dialog-heading">
+        <div><p>SHARE WITH YOUR COMMUNITY</p><h2 id="skillDialogTitle">Share a skill</h2></div>
+        <button id="closeSkillDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <input id="editingSkillId" type="hidden">
+      <label>Skill title<input id="skillTitle" type="text" maxlength="120" placeholder="Example: Python for Beginners" required></label>
+      <label>Description<textarea id="skillDescription" maxlength="1000" rows="4" placeholder="Explain what students will learn..." required></textarea></label>
+      <div class="form-row">
+        <label>Category<select id="skillCategory" required><option value="">Select category</option><option>Coding</option><option>Design</option><option>Communication</option><option>Study Skills</option><option>Other</option></select></label>
+        <label>Level<select id="skillLevel" required><option value="">Select level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>All levels</option></select></label>
+      </div>
+      <label>Number of lessons<input id="skillLessonCount" type="number" min="1" max="100" value="1" required></label>
+      <p id="skillFormError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancelSkillDialog" class="btn btn-outline" type="button">Cancel</button><button class="btn btn-primary" type="submit">Save Skill</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="lessonDialog" class="skill-dialog" aria-labelledby="lessonDialogTitle">
+    <div class="skill-form">
+      <div class="dialog-heading">
+        <div><p>RECORDED LESSONS</p><h2 id="lessonDialogTitle">Skill lessons</h2></div>
+        <button id="closeLessonDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div class="lesson-summary"><div><strong id="lessonSkillTitle">Skill</strong><small id="lessonProgress">0 published lessons</small></div><svg><use href="#i-play"></use></svg></div>
+      <form id="lessonForm" class="lesson-owner-form" novalidate>
+        <h3 id="lessonFormTitle">Publish a lesson</h3>
+        <input id="editingLessonId" type="hidden">
+        <label>Lesson title<input id="lessonTitle" type="text" maxlength="160" placeholder="Example: Variables and data types" required></label>
+        <label>Video link<input id="lessonVideoUrl" type="url" maxlength="500" placeholder="https://www.youtube.com/watch?v=..." required><small class="field-help">Use a secure HTTPS link from YouTube, Google Drive, Vimeo or another video service.</small></label>
+        <div class="form-row">
+          <label>Lesson number<input id="lessonPosition" type="number" min="1" max="100" value="1" required></label>
+          <span></span>
+        </div>
+        <label>Description<textarea id="lessonDescription" maxlength="1000" rows="3" placeholder="Explain what students will learn..." required></textarea></label>
+        <p id="lessonFormError" class="form-error" role="alert"></p>
+        <div class="dialog-actions"><button id="cancelLessonEdit" class="btn btn-outline" type="button">Clear</button><button class="btn btn-primary" type="submit">Save Lesson</button></div>
+      </form>
+      <div id="lessonList" class="lesson-list"></div>
+    </div>
+  </dialog>
+
+  <dialog id="noteDialog" class="skill-dialog" aria-labelledby="noteDialogTitle">
+    <form id="noteForm" class="skill-form" novalidate>
+      <div class="dialog-heading">
+        <div><p>SHARE A USEFUL RESOURCE</p><h2 id="noteDialogTitle">Upload a PDF note</h2></div>
+        <button id="closeNoteDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <input id="editingNoteId" type="hidden">
+      <label>Note title<input id="noteTitle" type="text" maxlength="160" placeholder="Example: DBMS Unit 2 Notes" required></label>
+      <label>Subject<input id="noteSubject" type="text" maxlength="100" placeholder="Example: Database Management" required></label>
+      <label>Description<textarea id="noteDescription" maxlength="1000" rows="4" placeholder="Explain what this PDF covers..." required></textarea></label>
+      <label id="noteFileField">PDF file<input id="noteFile" type="file" accept=".pdf,application/pdf" required><small class="field-help">PDF only · maximum file size 10 MB</small></label>
+      <p id="noteFormError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancelNoteDialog" class="btn btn-outline" type="button">Cancel</button><button class="btn btn-primary" type="submit">Save Note</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="profileDialog" class="skill-dialog" aria-labelledby="profileDialogTitle">
+    <form id="profileForm" class="skill-form" novalidate>
+      <div class="dialog-heading">
+        <div><p>YOUR STUDENT PROFILE</p><h2 id="profileDialogTitle">Edit profile</h2></div>
+        <button id="closeProfileDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <div class="profile-summary"><span id="profileDialogAvatar" class="profile-avatar profile-dialog-avatar">U</span><div><strong id="profileDialogName">Student</strong><small id="profileDialogEmail">student@college.edu</small></div></div>
+      <label>Full name<input id="profileFullName" type="text" minlength="2" maxlength="100" required></label>
+      <div class="form-row">
+        <label>Department<input id="profileDepartment" type="text" maxlength="100" placeholder="Example: Computer Science"></label>
+        <label>Study year<select id="profileStudyYear"><option value="">Select year</option><option value="1">1st year</option><option value="2">2nd year</option><option value="3">3rd year</option><option value="4">4th year</option><option value="5">5th year</option></select></label>
+      </div>
+      <label>About you<textarea id="profileBio" maxlength="500" rows="4" placeholder="Tell students what you learn and teach..."></textarea><small class="field-help">Maximum 500 characters</small></label>
+      <div class="profile-stats"><span><strong id="profileSkillCount">0</strong> skills</span><span><strong id="profileNoteCount">0</strong> notes</span><span><strong id="profileSessionCount">0</strong> sessions hosted</span></div>
+      <p id="profileFormError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancelProfileDialog" class="btn btn-outline" type="button">Cancel</button><button class="btn btn-primary" type="submit">Save Profile</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="sessionDialog" class="skill-dialog" aria-labelledby="sessionDialogTitle">
+    <form id="sessionForm" class="skill-form" novalidate>
+      <div class="dialog-heading">
+        <div><p>LEARN ONE-TO-ONE</p><h2 id="sessionDialogTitle">Request a session</h2></div>
+        <button id="closeSessionDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <input id="sessionSkillId" type="hidden">
+      <div class="booking-skill"><span><svg><use href="#i-calendar"></use></svg></span><div><small>Requesting a session for</small><strong id="sessionSkillTitle">Skill</strong><p id="sessionHostName">With SkillExchange student</p></div></div>
+      <label>Preferred date and time<input id="sessionDateTime" type="datetime-local" required><small class="field-help">Choose a time at least 15 minutes from now.</small></label>
+      <label>Duration<select id="sessionDuration" required><option value="30">30 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option></select></label>
+      <label>Message to the host<textarea id="sessionMessage" maxlength="500" rows="4" placeholder="Explain what you want to learn in this session..." required></textarea></label>
+      <p id="sessionFormError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancelSessionDialog" class="btn btn-outline" type="button">Cancel</button><button class="btn btn-primary" type="submit">Send Request</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="meetingDialog" class="skill-dialog" aria-labelledby="meetingDialogTitle">
+    <form id="meetingForm" class="skill-form" novalidate>
+      <div class="dialog-heading">
+        <div><p>SESSION MEETING LINK</p><h2 id="meetingDialogTitle">Add meeting link</h2></div>
+        <button id="closeMeetingDialog" class="dialog-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button>
+      </div>
+      <input id="meetingSessionId" type="hidden">
+      <div class="booking-skill"><span><svg><use href="#i-calendar"></use></svg></span><div><small>Accepted session</small><strong id="meetingSkillTitle">Skill</strong><p id="meetingStudentName">With student</p></div></div>
+      <label>Google Meet, Zoom or Teams link<input id="meetingUrl" type="url" maxlength="500" placeholder="https://meet.google.com/abc-defg-hij" required><small class="field-help">Create the meeting in your preferred app, then paste its HTTPS link here.</small></label>
+      <p id="meetingFormError" class="form-error" role="alert"></p>
+      <div class="dialog-actions"><button id="cancelMeetingDialog" class="btn btn-outline" type="button">Cancel</button><button class="btn btn-primary" type="submit">Save Meeting Link</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./script.js"></script>
+</body>
+</html>

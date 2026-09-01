@@ -1,0 +1,57 @@
+SKILLEXCHANGE - GITHUB AND RENDER GUIDE
+
+WHAT WAS MERGED
+
+- The complete frontend is inside public/.
+- The complete Node.js, Express, TypeScript and Prisma backend is in src/ and prisma/.
+- The browser now calls /api on the same website.
+- Express serves index.html, CSS, JavaScript and images.
+- The .env file, PostgreSQL password, node_modules, private PDFs and generated Prisma client are excluded from GitHub.
+
+LOCAL TEST
+
+1. Copy .env.example to .env.
+2. Add the local PostgreSQL password and a JWT secret of at least 32 characters.
+3. Run npm install.
+4. Run npm run prisma:generate.
+5. Run npm run dev.
+6. Open http://localhost:5000. Do not use Live Server for this merged version.
+
+UPLOAD TO GITHUB USING GITHUB DESKTOP
+
+1. Install and sign in to GitHub Desktop.
+2. Select File > Add Local Repository.
+3. Choose this SkillExchange-Merged-Deployment folder.
+4. If asked, select Create a repository here.
+5. Enter the commit summary: Final SkillExchange project.
+6. Click Commit to main.
+7. Click Publish repository.
+8. Use the repository name student-skill-exchange-platform.
+9. Choose Public for a portfolio project or Private while testing.
+10. Click Publish Repository.
+
+Never remove .env from .gitignore and never upload a real password or JWT secret.
+
+DEPLOY ON RENDER
+
+1. Sign in to Render with GitHub.
+2. In the Render dashboard, select New > Blueprint.
+3. Connect the student-skill-exchange-platform repository.
+4. Render reads render.yaml and displays one web service and one PostgreSQL database.
+5. Review the Free plan selections and click Apply/Deploy.
+6. Wait until the database migration, build and web-service deployment finish.
+7. Open the generated https://...onrender.com address.
+8. Register new cloud accounts. Local PostgreSQL accounts are not automatically copied to the cloud database.
+
+FREE HOSTING LIMITATIONS
+
+- Free Render PostgreSQL expires after 30 days.
+- Free Render web services cannot use a persistent disk.
+- PDF uploads stored in uploads/notes can disappear after a restart or redeployment.
+- Skills, profiles, sessions, meeting links and lesson URLs remain in PostgreSQL until the free database expires.
+
+For permanent use, upgrade the Render database and web service with a persistent disk, or change PDF storage to a cloud object-storage service.
+
+PROJECT ADDRESS
+
+After deployment, the Render web-service URL is the complete SkillExchange site. The frontend and API use the same domain, so FRONTEND_URL and Live Server are no longer required.

@@ -1,0 +1,9 @@
+node_modules/
+uploads/
+.env
+src/generated/
+prisma/dev.db
+coverage/
+dist/
+*.log
+.DS_Store
